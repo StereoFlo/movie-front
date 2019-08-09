@@ -3,12 +3,15 @@
   <input id="query" name="query" formControlName="query">
   <button>Submit</button>
 </form>
+<div *ngIf="countResults === 0 && isSubmitted">
+  <p>Ни чего не найдено</p>
+</div>
 <div *ngIf="countResults">
     <div *ngFor="let result of results">
       <p>
         <a [routerLink]="['movie/' + result.id]">{{ result.title }}</a>
       </p>
-      <p>
+      <p *ngIf="result.poster_path">
         <img alt="{{ result.title }}" src="https://image.tmdb.org/t/p/w185_and_h278_bestv2/{{ result.poster_path }}">
       </p>
       <p>

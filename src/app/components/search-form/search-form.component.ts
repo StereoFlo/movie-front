@@ -13,6 +13,7 @@ export class SearchFormComponent implements OnInit {
   searchForm: FormGroup;
   results: [SearchItem];
   countResults = 0;
+  isSubmitted = false;
 
   constructor(private formBuilder: FormBuilder, private movieService: MovieService) { }
 
@@ -33,6 +34,7 @@ export class SearchFormComponent implements OnInit {
   }
 
   public onSubmit() {
+    this.isSubmitted = true;
     if (this.getForm().invalid) {
       console.log('invalid');
     }
