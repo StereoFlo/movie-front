@@ -41,7 +41,7 @@ module.exports = "<router-outlet></router-outlet>\n"
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>{{ movie | json }}</p>\n"
+module.exports = "<p><img src=\"https://image.tmdb.org/t/p/w300_and_h450_bestv2/{{ movie.poster_path }}\" alt=\"{{ movie.tagline }}\"></p>\n<p>{{ movie.tagline }}</p>\n<p>{{ movie.overview }}</p>\n<p>{{ movie.release_date }}</p>\n"
 
 /***/ }),
 
