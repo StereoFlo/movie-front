@@ -53,8 +53,6 @@ export class SearchFormComponent implements OnInit {
    * onSubmit handler
    */
   public onSubmit(): void {
-    this.isSubmitted = true;
-    this.isLoading = true;
     this.results = null;
     if (this.getForm().invalid) {
       console.log('invalid');
@@ -62,6 +60,8 @@ export class SearchFormComponent implements OnInit {
     if (!this.getForm().query.value) {
       throw new Error('query is empty');
     }
+    this.isSubmitted = true;
+    this.isLoading = true;
     if (this.query) {
       this.router.navigate([''], { queryParams: { query: this.query } });
     }
