@@ -52,7 +52,7 @@ module.exports = "<p><img src=\"https://image.tmdb.org/t/p/w300_and_h450_bestv2/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<form [formGroup]=\"searchForm\" (ngSubmit)=\"onSubmit()\">\n  <label for=\"query\">dewdew</label>\n  <input id=\"query\" name=\"query\" formControlName=\"query\">\n  <button>Submit</button>\n</form>\n<div *ngIf=\"countResults\">\n    <div *ngFor=\"let result of results\">\n      <p>\n        <a [routerLink]=\"['movie/' + result.id]\">{{ result.title }}</a>\n      </p>\n      <p>\n        <img alt=\"{{ result.title }}\" src=\"https://image.tmdb.org/t/p/w185_and_h278_bestv2/{{ result.poster_path }}\">\n      </p>\n      <p>\n        {{ result.overview }}\n      </p>\n    </div>\n</div>\n"
+module.exports = "<form [formGroup]=\"searchForm\" (ngSubmit)=\"onSubmit()\">\n  <label for=\"query\">Введите название</label>\n  <input id=\"query\" name=\"query\" formControlName=\"query\">\n  <button>Submit</button>\n</form>\n<div *ngIf=\"countResults\">\n    <div *ngFor=\"let result of results\">\n      <p>\n        <a [routerLink]=\"['movie/' + result.id]\">{{ result.title }}</a>\n      </p>\n      <p>\n        <img alt=\"{{ result.title }}\" src=\"https://image.tmdb.org/t/p/w185_and_h278_bestv2/{{ result.poster_path }}\">\n      </p>\n      <p>\n        {{ result.overview }}\n      </p>\n    </div>\n</div>\n"
 
 /***/ }),
 
