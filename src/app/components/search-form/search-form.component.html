@@ -1,0 +1,18 @@
+<form [formGroup]="searchForm" (ngSubmit)="onSubmit()">
+  <label for="query">dewdew</label>
+  <input id="query" name="query" formControlName="query">
+  <button>Submit</button>
+</form>
+<div *ngIf="countResults">
+    <div *ngFor="let result of results">
+      <p>
+        {{ result.title }}
+      </p>
+      <p>
+        <img alt="{{ result.title }}" src="https://image.tmdb.org/t/p/w185_and_h278_bestv2/{{ result.poster_path }}">
+      </p>
+      <p>
+        {{ result.overview }}
+      </p>
+    </div>
+</div>
