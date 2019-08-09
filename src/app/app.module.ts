@@ -6,11 +6,13 @@ import { AppComponent } from './app.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import {SearchFormComponent} from './components/search-form/search-form.component';
 import {HttpClientModule} from '@angular/common/http';
+import { MovieShowComponent } from './components/movie-show/movie-show.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SearchFormComponent
+    SearchFormComponent,
+    MovieShowComponent
   ],
   imports: [
     BrowserModule,

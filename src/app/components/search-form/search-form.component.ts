@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {MovieServiceService} from '../../services/movie-service.service';
+import {MovieService} from '../../services/movie.service';
 import {SearchItem} from '../../models/search-item';
 
 @Component({
@@ -14,7 +14,7 @@ export class SearchFormComponent implements OnInit {
   results: [SearchItem];
   countResults = 0;
 
-  constructor(private formBuilder: FormBuilder, private movieService: MovieServiceService) { }
+  constructor(private formBuilder: FormBuilder, private movieService: MovieService) { }
 
   /**
    * init
