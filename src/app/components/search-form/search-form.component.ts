@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {MovieService} from '../../services/movie.service';
 import {SearchItem} from '../../models/search-item';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-search-form',
@@ -15,8 +16,10 @@ export class SearchFormComponent implements OnInit {
   countResults: number;
   isSubmitted = false;
   isLoading = false;
+  query: string;
 
-  constructor(private formBuilder: FormBuilder, private movieService: MovieService) { }
+  // tslint:disable-next-line:max-line-length
+  constructor(private formBuilder: FormBuilder, private movieService: MovieService, private route: ActivatedRoute, private router: Router) { }
 
   /**
    * init
@@ -25,6 +28,13 @@ export class SearchFormComponent implements OnInit {
     this.searchForm = this.formBuilder.group({
       query: ['', Validators.required]
     });
+    this.route.queryParams.subscribe(data => {
+      if (data.query) {
+        this.query = data.query;
+        this.getForm().query.setValue(data.query);
+        this.onSubmit();
+      }
+    }).unsubscribe();
   }
 
   /**
@@ -45,6 +55,9 @@ export class SearchFormComponent implements OnInit {
     }
     if (!this.getForm().query.value) {
       throw new Error('query is empty');
+    }
+    if (this.query) {
+      this.router.navigate([''], { queryParams: { query: this.query } });
     }
     this.movieService.getSearch(this.getForm().query.value).subscribe(data => {
       this.countResults = data.total_results;

@@ -19,7 +19,7 @@ export class MovieShowComponent implements OnInit {
 
   ngOnInit() {
     if (!this.route.snapshot.params.movieId) {
-      this.router.navigate(['/ticket']);
+      this.router.navigate(['/']);
       return;
     }
     this.movieId = +this.route.snapshot.params.movieId;
