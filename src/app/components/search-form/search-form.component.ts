@@ -26,7 +26,12 @@ export class SearchFormComponent implements OnInit {
    */
   ngOnInit(): void {
     this.searchForm = this.formBuilder.group({
-      query: ['', Validators.required]
+      query: [
+        '',
+        Validators.required,
+        Validators.minLength(2),
+        Validators.maxLength(100)
+      ]
     });
     this.route.queryParams.subscribe(data => {
       if (data.query) {
@@ -50,6 +55,7 @@ export class SearchFormComponent implements OnInit {
   public onSubmit(): void {
     this.isSubmitted = true;
     this.isLoading = true;
+    this.results = null;
     if (this.getForm().invalid) {
       console.log('invalid');
     }

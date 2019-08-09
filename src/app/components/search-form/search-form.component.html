@@ -1,6 +1,9 @@
 <form [formGroup]="searchForm" (ngSubmit)="onSubmit()">
   <label for="query">Введите название</label>
   <input id="query" name="query" formControlName="query">
+  <div *ngIf="isSubmitted && getForm().query.errors" class="invalid-feedback">
+    <div *ngIf="getForm().query.errors.required">email не может быть пустым</div>
+  </div>
   <button>Submit</button>
 </form>
 <div *ngIf="countResults === 0 && isSubmitted">
