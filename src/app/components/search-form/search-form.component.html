@@ -6,6 +6,9 @@
 <div *ngIf="countResults === 0 && isSubmitted">
   <p>Ни чего не найдено</p>
 </div>
+<div *ngIf="isLoading">
+  <p>Загружаю результаты, подождите</p>
+</div>
 <div *ngIf="countResults">
     <div *ngFor="let result of results">
       <p>

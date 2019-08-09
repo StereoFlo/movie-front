@@ -14,6 +14,8 @@ export class MovieShowComponent implements OnInit {
 
   movieId: number;
   movie: Movie;
+  isLoading = false;
+  error: string;
 
   ngOnInit() {
     if (!this.route.snapshot.params.movieId) {
@@ -25,8 +27,13 @@ export class MovieShowComponent implements OnInit {
   }
 
   public show() {
+    this.isLoading = true;
     this.movieService.getMovie(this.movieId).subscribe(data => {
       this.movie = data;
+      this.isLoading = false;
+    }, error => {
+      this.isLoading = false;
+      this.error = error.message;
     });
   }
 }

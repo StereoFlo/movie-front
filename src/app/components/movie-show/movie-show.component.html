@@ -1,4 +1,12 @@
-<p><img src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/{{ movie.poster_path }}" alt="{{ movie.tagline }}"></p>
-<p>{{ movie.tagline }}</p>
-<p>{{ movie.overview }}</p>
-<p>{{ movie.release_date }}</p>
+<div *ngIf="isLoading && !error">
+  <p>Загружаю...</p>
+</div>
+<div *ngIf="!isLoading && error">
+  <p>Возникла ошибка: {{ error }}</p>
+</div>
+<div *ngIf="!isLoading && !error">
+  <p><img src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/{{ movie.poster_path }}" alt="{{ movie.tagline }}"></p>
+  <p>{{ movie.tagline }}</p>
+  <p>{{ movie.overview }}</p>
+  <p>{{ movie.release_date }}</p>
+</div>
