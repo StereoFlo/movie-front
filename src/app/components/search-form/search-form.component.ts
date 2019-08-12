@@ -28,9 +28,11 @@ export class SearchFormComponent implements OnInit {
     this.searchForm = this.formBuilder.group({
       query: [
         '',
-        Validators.required,
-        Validators.minLength(2),
-        Validators.maxLength(100)
+        [
+          Validators.required,
+          Validators.min(2),
+          Validators.max(100)
+        ],
       ]
     });
     this.route.queryParams.subscribe(data => {
@@ -62,13 +64,15 @@ export class SearchFormComponent implements OnInit {
     }
     this.isSubmitted = true;
     this.isLoading = true;
-    if (this.query) {
-      this.router.navigate([''], { queryParams: { query: this.query } });
-    }
+    this.query = this.getForm().query.value;
     this.movieService.getSearch(this.getForm().query.value).subscribe(data => {
       this.countResults = data.total_results;
       this.results = data.results;
       this.isLoading = false;
     });
+
+    if (this.query) {
+      this.router.navigate(['search'], { queryParams: { query: this.query } });
+    }
   }
 }
