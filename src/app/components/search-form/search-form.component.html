@@ -16,7 +16,7 @@
   <div>Результатов поиска: {{ countResults }}</div>
   <div *ngFor="let result of results">
     <p>
-      <a [routerLink]="['movie/' + result.id]">{{ result.title }}</a>
+      <a [routerLink]="['/movie/' + result.id]">{{ result.title }}</a>
     </p>
     <p *ngIf="result.poster_path">
       <img alt="{{ result.title }}" src="https://image.tmdb.org/t/p/w185_and_h278_bestv2/{{ result.poster_path }}">
