@@ -1,12 +1,16 @@
-<div *ngIf="isLoading && !error">
-  <p>Загружаю...</p>
+<div class="row">
+  <div class="col s12" *ngIf="!isLoading && !error">
+    <h3 class="header">НАЗВАНИЕ!!!!1111</h3>
+    <div class="card horizontal">
+      <div class="card-image">
+        <img src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/{{ movie.poster_path }}" alt="{{ movie.tagline }}">
+      </div>
+      <div class="card-stacked">
+        <div class="card-content">
+          <p>{{ movie.overview }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-<div *ngIf="!isLoading && error">
-  <p>Возникла ошибка: {{ error }}</p>
-</div>
-<div *ngIf="!isLoading && !error">
-  <p><img src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/{{ movie.poster_path }}" alt="{{ movie.tagline }}"></p>
-  <p>{{ movie.tagline }}</p>
-  <p>{{ movie.overview }}</p>
-  <p>{{ movie.release_date }}</p>
-</div>
+

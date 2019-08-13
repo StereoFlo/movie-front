@@ -1,0 +1,42 @@
+.searchMovie {
+    margin: 0 auto;
+    max-width: 600px;
+}
+
+.searchMovie .row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.searchList .row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.searchList .row .card {
+    max-height: 278px;
+    background: blue;
+}
+
+.searchList .row .card .card-content {
+    overflow:  hidden;
+}
+
+.searchList .row .header a{
+    font-weight: bold;
+    -webkit-animation: blink 2s linear infinite;
+    animation: blink 2s linear infinite;
+}
+@-webkit-keyframes blink {
+    50% { color: red }
+    51% { color: transparent }
+    100% { color: transparent }
+}
+@keyframes blink {
+    50% { color: red }
+    51% { color: transparent }
+    100% { color: transparent }
+}
