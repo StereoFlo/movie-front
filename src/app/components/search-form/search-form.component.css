@@ -9,26 +9,26 @@
     justify-content: center;
 }
 
-.searchList .row {
+.searchList .row, .trending{
     display: flex;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
 }
 
-.searchList .row .card {
+.searchList .row .card, .trending .row .card {
     max-height: 278px;
     background: blue;
 }
 
-.searchList .row .card .card-content {
+.searchList .row .card .card-content, .trending .row .card .card-content {
     overflow:  hidden;
 }
 
-.searchList .row .header a{
+.searchList .row .header a, .trending .row .header a{
     font-weight: bold;
     -webkit-animation: blink 2s linear infinite;
-    animation: blink 2s linear infinite;
+    animation: blink 1s linear infinite;
 }
 @-webkit-keyframes blink {
     50% { color: red }
@@ -40,3 +40,4 @@
     51% { color: transparent }
     100% { color: transparent }
 }
+

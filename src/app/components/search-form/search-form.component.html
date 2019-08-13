@@ -50,16 +50,27 @@
 
 </div>
 
-<div>
-  <div *ngFor="let result of trending">
-    <p>
-      <a [routerLink]="['/movie/' + result.id]">{{ result.title }}</a>
-    </p>
-    <p *ngIf="result">
-      <img alt="{{ result.title }}" src="https://image.tmdb.org/t/p/w185_and_h278_bestv2/{{ result.poster_path }}">
-    </p>
-    <p>
-      {{ result.overview }}
-    </p>
+<div class="row trending" *ngFor="let result of trending">
+
+  <div class="row">
+    <div class="col s12">
+      <h5 class="header">
+        <a [routerLink]="['/movie/' + result.id]">{{ result.title }}</a>
+      </h5>
+      <div class="card horizontal">
+        <div class="card-image" *ngIf="result.poster_path">
+          <img alt="{{ result.title }}" src="https://image.tmdb.org/t/p/w185_and_h278_bestv2/{{ result.poster_path }}">
+        </div>
+        <div class="card-stacked">
+          <div class="card-content">
+            <p>{{ result.overview }}</p>
+          </div>
+          <div class="card-action">
+            <a [routerLink]="['/movie/' + result.id]">глянуть че там</a>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
+
 </div>
