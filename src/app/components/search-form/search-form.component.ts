@@ -13,6 +13,7 @@ export class SearchFormComponent implements OnInit {
 
   searchForm: FormGroup;
   results: [SearchItem];
+  trending: [SearchItem];
   countResults: number;
   isSubmitted = false;
   isLoading = false;
@@ -42,6 +43,8 @@ export class SearchFormComponent implements OnInit {
         this.onSubmit();
       }
     }).unsubscribe();
+
+    this.getTrending();
   }
 
   /**
@@ -49,6 +52,15 @@ export class SearchFormComponent implements OnInit {
    */
   public getForm() {
     return this.searchForm.controls;
+  }
+
+  /**
+   * gets a trending info
+   */
+  public getTrending(): void {
+    this.movieService.getTrending().subscribe(data => {
+      this.trending = data.results;
+    });
   }
 
   /**
@@ -65,6 +77,7 @@ export class SearchFormComponent implements OnInit {
     this.isSubmitted = true;
     this.isLoading = true;
     this.query = this.getForm().query.value;
+    this.trending = null;
     this.movieService.getSearch(this.getForm().query.value).subscribe(data => {
       this.countResults = data.total_results;
       this.results = data.results;

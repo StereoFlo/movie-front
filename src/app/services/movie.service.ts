@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient, HttpParams} from '@angular/common/http';
 import {SearchList} from '../models/search-list';
 import {Observable} from 'rxjs';
@@ -10,7 +10,8 @@ import {Movie} from '../models/movie';
 })
 export class MovieService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+  }
 
   /**
    * @param query some query
@@ -27,5 +28,15 @@ export class MovieService {
    */
   public getMovie(movieId: number): Observable<Movie> {
     return this.http.get<Movie>(`${environment.apiUrl}/movie/${movieId}`);
+  }
+
+  /**
+   * gets trendings
+   * @param mediaType all,movie,tv,person
+   * @param timeWindow day,week
+   */
+  public getTrending(mediaType: string = 'all', timeWindow: string = 'week'): Observable<SearchList> {
+    // return this.http.get<SearchList>(`${environment.apiUrl}/trending/${mediaType}/${timeWindow}`);
+    return this.http.get<SearchList>(`${environment.apiUrl}/trending`);
   }
 }
