@@ -14,7 +14,7 @@ export class SearchComponent implements OnInit {
   searchForm: FormGroup;
   results: [SearchItem];
   trending: [SearchItem];
-  countResults: number;
+  countResults = 0;
   isSubmitted = false;
   isLoading = false;
   query: string;
@@ -58,9 +58,11 @@ export class SearchComponent implements OnInit {
    * gets a trending info
    */
   public getTrending(): void {
-    this.movieService.getTrending().subscribe(data => {
-      this.trending = data.results;
-    });
+    if (this.countResults === 0) {
+      this.movieService.getTrending().subscribe(data => {
+        this.trending = data.results;
+      });
+    }
   }
 
   /**

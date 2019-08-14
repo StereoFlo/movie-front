@@ -9,7 +9,7 @@
   </div>
 
   <div *ngIf="isSubmitted && getForm().query.errors" class="invalid-feedback">
-    <div *ngIf="getForm().query.errors.required">email не может быть пустым</div>
+    <div *ngIf="getForm().query.errors.required">Поисковый запрос не может быть пустым</div>
   </div>
 
 </form>
@@ -33,8 +33,6 @@
 
 </div>
 
-<div class="row trending" >
-
+<div class="row trending">
   <app-movie-list [list]="trending"></app-movie-list>
-
 </div>
