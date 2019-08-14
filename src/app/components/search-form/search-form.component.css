@@ -18,26 +18,10 @@
 
 .searchList .row .card, .trending .row .card {
     max-height: 278px;
-    background: blue;
 }
 
 .searchList .row .card .card-content, .trending .row .card .card-content {
     overflow:  hidden;
 }
 
-.searchList .row .header a, .trending .row .header a{
-    font-weight: bold;
-    -webkit-animation: blink 2s linear infinite;
-    animation: blink 1s linear infinite;
-}
-@-webkit-keyframes blink {
-    50% { color: red }
-    51% { color: transparent }
-    100% { color: transparent }
-}
-@keyframes blink {
-    50% { color: red }
-    51% { color: transparent }
-    100% { color: transparent }
-}
 

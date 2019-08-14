@@ -50,10 +50,9 @@
 
 </div>
 
-<div class="row trending" *ngFor="let result of trending">
+<div class="row trending" >
 
-  <div class="row">
-    <div class="col s12">
+    <div class="col s6" *ngFor="let result of trending">
       <h5 class="header">
         <a [routerLink]="['/movie/' + result.id]">{{ result.title }}</a>
       </h5>
@@ -71,6 +70,5 @@
         </div>
       </div>
     </div>
-  </div>
 
 </div>
