@@ -1,0 +1,18 @@
+<div class="col s6" *ngFor="let result of list">
+  <h5 class="header">
+    <a [routerLink]="['/movie/' + result.id]">{{ result.title }}</a>
+  </h5>
+  <div class="card horizontal">
+    <div class="card-image" *ngIf="result.poster_path">
+      <img alt="{{ result.title }}" src="https://image.tmdb.org/t/p/w185_and_h278_bestv2/{{ result.poster_path }}">
+    </div>
+    <div class="card-stacked">
+      <div class="card-content">
+        <p>{{ result.overview }}</p>
+      </div>
+      <div class="card-action">
+        <a [routerLink]="['/movie/' + result.id]">глянуть че там</a>
+      </div>
+    </div>
+  </div>
+</div>

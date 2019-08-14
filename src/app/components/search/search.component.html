@@ -1,0 +1,40 @@
+<form [formGroup]="searchForm" (ngSubmit)="onSubmit()" class="searchMovie">
+
+  <div class="row">
+    <div class="input-field col s9">
+      <input type="text" id="query" name="query" formControlName="query">
+      <label for="query">Введите название</label>
+    </div>
+    <button class="waves-effect waves-light btn col s3">ЁПТА</button>
+  </div>
+
+  <div *ngIf="isSubmitted && getForm().query.errors" class="invalid-feedback">
+    <div *ngIf="getForm().query.errors.required">email не может быть пустым</div>
+  </div>
+
+</form>
+
+<div *ngIf="countResults === 0 && isSubmitted">
+  <p>Ни чего не найдено</p>
+</div>
+<div *ngIf="isLoading">
+  <p>Загружаю результаты, подождите</p>
+</div>
+
+<div class="searchList" *ngIf="countResults">
+
+  <div class="row">
+    <div>Результатов поиска: {{ countResults }}</div>
+  </div>
+
+  <div class="row">
+    <app-movie-list [list]="results"></app-movie-list>
+  </div>
+
+</div>
+
+<div class="row trending" >
+
+  <app-movie-list [list]="trending"></app-movie-list>
+
+</div>
