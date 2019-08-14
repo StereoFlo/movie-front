@@ -16,12 +16,6 @@
     flex-wrap: wrap;
 }
 
-.searchList .row .card, .trending .row .card {
-    max-height: 278px;
-}
 
-.searchList .row .card .card-content, .trending .row .card .card-content {
-    overflow:  hidden;
-}
 
 
