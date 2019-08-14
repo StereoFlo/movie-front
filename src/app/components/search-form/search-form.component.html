@@ -52,7 +52,7 @@
 
 <div class="row trending" >
 
-    <div class="col s6" *ngFor="let result of trending">
+    <div class="col s12 6" *ngFor="let result of trending">
       <h5 class="header">
         <a [routerLink]="['/movie/' + result.id]">{{ result.title }}</a>
       </h5>
