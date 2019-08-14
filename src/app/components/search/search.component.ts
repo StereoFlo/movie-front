@@ -5,11 +5,11 @@ import {SearchItem} from '../../models/search-item';
 import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
-  selector: 'app-search-form',
-  templateUrl: './search-form.component.html',
-  styleUrls: ['./search-form.component.css']
+  selector: 'app-search',
+  templateUrl: './search.component.html',
+  styleUrls: ['./search.component.css']
 })
-export class SearchFormComponent implements OnInit {
+export class SearchComponent implements OnInit {
 
   searchForm: FormGroup;
   results: [SearchItem];
