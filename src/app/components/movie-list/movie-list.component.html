@@ -1,6 +1,6 @@
 <div class="col s6" *ngFor="let result of list">
   <h5 class="header">
-    <a [routerLink]="['/movie/' + result.id]">{{ result.title }}</a>
+    <a [routerLink]="['/movie/' + result.id]">{{ result.title ? result.title : result.name }}</a>
   </h5>
   <div class="card horizontal">
     <div class="card-image" *ngIf="result.poster_path">

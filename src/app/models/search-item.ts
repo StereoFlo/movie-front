@@ -4,6 +4,7 @@ export class SearchItem {
   video: boolean;
   'vote_average': string;
   title: string;
+  name: string | null;
   popularity: string;
   'poster_path': string;
   'original_language': string;
