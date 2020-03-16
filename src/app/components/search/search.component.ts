@@ -19,8 +19,10 @@ export class SearchComponent implements OnInit {
   isLoading = false;
   query: string;
 
-  // tslint:disable-next-line:max-line-length
-  constructor(private formBuilder: FormBuilder, private movieService: MovieService, private route: ActivatedRoute, private router: Router) { }
+  constructor(private formBuilder: FormBuilder,
+              private movieService: MovieService,
+              private route: ActivatedRoute,
+              private router: Router) { }
 
   /**
    * init
@@ -41,10 +43,10 @@ export class SearchComponent implements OnInit {
         this.query = data.query;
         this.getForm().query.setValue(data.query);
         this.onSubmit();
+      } else  {
+        this.getTrending();
       }
     }).unsubscribe();
-
-    this.getTrending();
   }
 
   /**

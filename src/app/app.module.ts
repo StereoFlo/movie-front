@@ -8,13 +8,15 @@ import {SearchComponent} from './components/search/search.component';
 import {HttpClientModule} from '@angular/common/http';
 import { MovieShowComponent } from './components/movie-show/movie-show.component';
 import { MovieListComponent } from './components/movie-list/movie-list.component';
+import { TvShowComponent } from './components/tv-show/tv-show.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SearchComponent,
     MovieShowComponent,
-    MovieListComponent
+    MovieListComponent,
+    TvShowComponent
   ],
   imports: [
     BrowserModule,

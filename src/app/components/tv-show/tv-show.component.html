@@ -1,9 +1,9 @@
 <div class="row">
   <div class="col s12" *ngIf="!isLoading && !error">
-    <h3 class="header">{{ movie.title ? movie.title : movie.original_title }}</h3>
+    <h3 class="header">{{ movie.name ? movie.name : movie.original_name }}</h3>
     <div class="card horizontal">
       <div class="card-image">
-        <img src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/{{ movie.poster_path }}" alt="{{ movie.tagline }}">
+        <img src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/{{ movie.poster_path }}" alt="{{ movie.name }}">
       </div>
       <div class="card-stacked">
         <div class="card-title">

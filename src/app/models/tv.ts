@@ -1,15 +1,12 @@
-export class Movie {
+export class Tv {
+  id: number;
   adult: boolean;
   homepage: string;
-  id: number;
-  'imdb_id': string;
-  'original_title': string;
-  'title': string;
+  'original_name': string;
+  'name': string;
   overview: string;
   popularity: string;
   'poster_path': string;
-  'release_date': string;
-  tagline: string;
   'vote_count': number;
   'vote_average': number;
 }

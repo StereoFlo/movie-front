@@ -1,6 +1,9 @@
 <div class="col m12 xl6" *ngFor="let result of list">
-  <h5 class="header">
-    <a [routerLink]="['/movie/' + result.id]">{{ result.title ? result.title : result.name }}</a>
+  <h5 class="header" *ngIf="result.media_type === 'movie'">
+    <a [routerLink]="['/movie/' + result.id]">{{ result.title }}</a>
+  </h5>
+  <h5 class="header" *ngIf="result.media_type === 'tv'">
+    <a [routerLink]="['/tv/' + result.id]">{{ result.name }} (сериал)</a>
   </h5>
   <div class="card horizontal">
     <div class="card-image" *ngIf="result.poster_path">
@@ -10,8 +13,11 @@
       <div class="card-content">
         <p>{{ result.overview }}</p>
       </div>
-      <div class="card-action">
+      <div class="card-action" *ngIf="result.media_type === 'movie'">
         <a [routerLink]="['/movie/' + result.id]">глянуть че там</a>
+      </div>
+      <div class="card-action" *ngIf="result.media_type === 'tv'">
+        <a [routerLink]="['/tv/' + result.id]">глянуть че там</a>
       </div>
     </div>
   </div>

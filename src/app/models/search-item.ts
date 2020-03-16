@@ -13,4 +13,5 @@ export class SearchItem {
   adult: boolean;
   overview: string;
   'release_date': string;
+  'media_type': string;
 }

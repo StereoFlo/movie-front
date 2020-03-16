@@ -4,6 +4,7 @@ import {SearchList} from '../models/search-list';
 import {Observable} from 'rxjs';
 import {environment} from '../../environments/environment';
 import {Movie} from '../models/movie';
+import {Tv} from '../models/tv';
 
 @Injectable({
   providedIn: 'root'
@@ -28,6 +29,10 @@ export class MovieService {
    */
   public getMovie(movieId: number): Observable<Movie> {
     return this.http.get<Movie>(`${environment.apiUrl}/movie/${movieId}`);
+  }
+
+  public getTv(tvId: number): Observable<Tv> {
+    return this.http.get<Tv>(`${environment.apiUrl}/tv/${tvId}`);
   }
 
   /**
